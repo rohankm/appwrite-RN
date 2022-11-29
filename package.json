@@ -6,16 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url":"git+https://github.com/rohankm/appwrite-RN.git"
+  },
   "keywords": [
     "react",
-    "native",
+    "react native",
     "appwrite",
     "expo"
   ],
   "dependencies": {
     "appwrite": "^10.1.0",
     "expo-random": "~13.0.0",
-    "expo-auth-session": "~3.7.2"
+    "expo-auth-session": "~3.7.2",
+    "react": "18.1.0",
+    "react-native": "0.70.5",
+    "@react-native-cookies/cookies": "^6.2.1"
   },
   "author": "Rohan KM",
   "email":"rohankm@batscreations.com",

@@ -1,3 +1,3 @@
-import { Oauthlogin } from "./OauthLogin";
+import Oauthlogin from "./src/OauthLogin.js";
 
-module.exports = { Oauthlogin };
+export { Oauthlogin };
