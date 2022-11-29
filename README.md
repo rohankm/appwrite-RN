@@ -4,7 +4,7 @@ import { Oauthlogin } from "appwrite-rn";
 `
 ```
 #import your logo
-import GoogleLogo from "../../assets/GoogleLogo.svg";
+import GoogleLogo from "./assets/GoogleLogo.svg";
 ```
 
 ```
@@ -17,7 +17,7 @@ import GoogleLogo from "../../assets/GoogleLogo.svg";
   style={{
     backgroundColor: "white",
     borderColor: colors.primary[500],
-    }}
-    // textStyle={{ color: "red" }}
+  }}
+  // textStyle={{ color: "red" }}
 />
 ```
