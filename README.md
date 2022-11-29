@@ -1,7 +1,8 @@
 # appwrite-RN
-`
-import { Oauthlogin } from "appwrite-rn";
-`
+Install the following packages
+`yarn add appwrite expo-random expo-auth-session @react-native-cookies/cookies`
+
+`import { Oauthlogin } from "appwrite-rn";`
 ```
 #import your logo
 import GoogleLogo from "./assets/GoogleLogo.svg";
