@@ -1,7 +1,10 @@
 # appwrite-RN
 `
 import { Oauthlogin } from "appwrite-rn";
+#import your logo
+import GoogleLogo from "../../assets/GoogleLogo.svg";
 `
+ 
 
 ```
 <Oauthlogin
