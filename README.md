@@ -20,7 +20,17 @@ import { Oauthlogin } from "appwrite-rn";
 import GoogleLogo from "./assets/GoogleLogo.svg";
 
 export default function demo() {
+const client = new Client();
+
+const appwriteAccount = new Account(client);
+
+client
+    .setEndpoint('https://[HOSTNAME_OR_IP]/v1') // Your API Endpoint
+    .setProject('5df5acd0d48c2') // Your project ID
+;
+
   const [loggedIn, setLoggedIn] = useState(false);
+  
   useEffect(() => {
     console.log("Output ", loggedIn);
   }, [loggedIn]);
