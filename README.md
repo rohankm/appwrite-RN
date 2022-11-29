@@ -1,4 +1,5 @@
 # appwrite-RN
+NOTE: Works with React Native and Bare expo apps
 # Step 1
 Install the following packages
 `yarn add appwrite expo-random expo-auth-session @react-native-cookies/cookies`
