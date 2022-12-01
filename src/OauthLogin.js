@@ -5,6 +5,7 @@ import CookieManager from "@react-native-cookies/cookies";
 import {
   ActivityIndicator,
   Button,
+  Platform,
   Pressable,
   Text,
   TouchableOpacity,
@@ -85,7 +86,14 @@ export default function OauthLogin({
       ) : (
         <>
           {Logo && <Logo />}
-          <Text style={{ paddingLeft: Logo && 7, ...textStyle }} bold>
+          <Text
+            style={{
+              paddingLeft: Logo && 7,
+              lineHeight: Platform.OS == "ios" ? 28 : undefined,
+              ...textStyle,
+            }}
+            bold
+          >
             {text}
           </Text>
         </>
