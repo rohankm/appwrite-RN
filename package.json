@@ -1,6 +1,6 @@
 {
   "name": "appwrite-rn",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "React Native support for Appwrite Web SDK",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "appwrite",
     "expo"
   ],
-  "devDependencies": {
+  "dependencies": {
     "appwrite": "^10.1.0",
     "expo-random": "~13.0.0",
     "expo-auth-session": "~3.7.2",

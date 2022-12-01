@@ -2,7 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 
 import { useAuthRequest } from "expo-auth-session";
 import CookieManager from "@react-native-cookies/cookies";
-import { ActivityIndicator, Button, Pressable, Text } from "react-native";
+import {
+  ActivityIndicator,
+  Button,
+  Pressable,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 
 export default function OauthLogin({
   appwriteAccount,
@@ -12,18 +18,16 @@ export default function OauthLogin({
   style,
   text,
   textStyle,
+  disabled,
+  succLogin,
 }) {
   const [loading, setLoading] = useState(false);
 
-  const redirectUri = `${appwriteAccount.createOAuth2Session(
-    provider
-    // "com.batscreations.easyscriptReader"
-  )}&`;
+  const redirectUri = `${appwriteAccount.createOAuth2Session(provider)}&`;
 
   const [request, response, promptAsync] = useAuthRequest(
     {
       redirectUri: `appwrite-callback-${appwriteAccount.client.config.project.toLowerCase()}://`,
-      // redirectUri: "com.batscreations.easyscriptReader://",
       responseType: "token",
     },
     { authorizationEndpoint: redirectUri.toString() }
@@ -46,6 +50,7 @@ export default function OauthLogin({
         }).then((done) => {
           // console.log("CookieManager.set =>", done);
         });
+        await succLogin();
         setLoggedIn(true);
         setLoading(false);
       };
@@ -53,13 +58,14 @@ export default function OauthLogin({
     }
   }, [response]);
   return (
-    <Pressable
+    <TouchableOpacity
       style={{
         flexDirection: "row",
         borderWidth: 2,
         borderRadius: 5,
         padding: 10,
         borderColor: "blue",
+        opacity: disabled ? 0.5 : 1,
         ...style,
       }}
       onPress={async () => {
@@ -67,6 +73,7 @@ export default function OauthLogin({
         await promptAsync();
         setLoading(false);
       }}
+      disabled={disabled}
     >
       {loading ? (
         <>
@@ -83,6 +90,6 @@ export default function OauthLogin({
           </Text>
         </>
       )}
-    </Pressable>
+    </TouchableOpacity>
   );
 }
